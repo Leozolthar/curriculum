@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E0E0E0; /* Fundo mais escuro para o body */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #66A1C7; /* Azul claro estilo anos 2000 */
+    color: black; /* Cor preta para o texto */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: black; /* Cor preta para o nome */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #E0E0E0; /* Fundo mais escuro para o centro */
+}
+
+h1, h2 {
+    color: #006F76; /* Mantemos o tom de azul para os subtítulos */
+}
+
+button {
+    background-color: #7b909d;/* Cor cinza inicial */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza a transição das cores */
+}
+
+button:hover {
+    background-color: #000000; /* Cor preta ao passar o mouse */
+    color: white; /* Letras brancas */
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #66A1C7; /* Azul claro estilo anos 2000 */
+    color: black;
+}
