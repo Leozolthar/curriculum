@@ -10,10 +10,11 @@
     <header>
         <h1>Leonardo Stefani</h1>
         <p>QC Analyst, SSr Adv - Globant</p>
-	<p>Vila Carrão - SP</p>
+	<p>Vila Carrão, SP - Brasil</p>
         <p>Telefone: (11) 99152-3532 | E-mail: stefanileo1005@gmail.com | LinkedIn: <a href="https://linkedin.com/in/leleostefani/" target="_blank">linkedin.com/in/leleostefani/</a></p>
         <button onclick="toggleLanguage('pt')">Português</button>
         <button onclick="toggleLanguage('en')">English</button>
+        <button onclick="downloadPDF()">Download PDF</button>
     </header>
 
     <div class="container">
@@ -28,7 +29,7 @@
 
             <h2>Experiência Profissional</h2>
             <h3>QC Analyst, SSr Adv - Globant (Jan 2025 - Atual)</h3>
-            <p><strong>Cliente: Fullsteam (Setor Financeiro)</strong><br>
+            <p><strong>Cliente: Fullsteam</strong><br>
             • Atuação direta com clientes americanos, garantindo qualidade em todas as fases do desenvolvimento.<br>
             • Testes de Backend, elaboração de casos de testes e planos de testes no Zephyr Scale.<br>
             • Testes Unitários, Testes de Integração, manipulação de dados e criação de massa de testes em SQL.<br>
@@ -43,6 +44,22 @@
             • Realização de testes em API com ferramentas como Swagger e Postman.<br>
             • Acompanhamento de logs diários e participação ativa nas cerimônias ágeis.</p>
 
+            <h3>QA Engineer - Iteris Consultoria e Software (Mar 2021 - Dez 2024)</h3>
+            <p><strong>Cliente: Grupo Recovery</strong><br>
+            • Testes de API utilizando Postman e Swagger, garantindo a integridade e confiabilidade das integrações do cliente.<br>
+            • Elaboração de Matriz de Risco, identificando impactos e definindo estratégias de testes eficazes.<br>
+            • Testes Integrados, validando a comunicação entre sistemas e garantindo a integridade das soluções.<br>
+            • Mapeamento de Testes no sistema SIR, estruturando cenários e garantindo cobertura adequada para validar as funcionalidades.</p>
+
+            <h3>QA Engineer - Iteris Consultoria e Software (Mar 2021 - Dez 2024)</h3>
+            <p><strong>Cliente: PagSeguro</strong><br>
+            • Testes de API utilizando Swagger e Postman, garantindo a comunicação eficiente entre serviços.<br>
+            • Testes em ChatBot, garantindo o funcionamento e satisfação do cliente, com redução de custos para a empresa<br>
+            • Gerenciamento de testes no Jira, organizando e monitorando execuções e resultados.<br>
+            • Testes de Integração, validando a comunicação entre diferentes sistemas.<br>
+            • Análise e gerenciamento de impacto junto a outros times, garantindo a estabilidade das entregas.<br>
+            • Elaboração de cenários de testes com Gherkin, promovendo maior clareza e padronização dos testes.</p>
+            
             <h3>Tester QA - i9XP Tecnologia (Fev 2020 - Fev 2021)</h3>
             <p><strong>Ramo: E-commerce B2B</strong><br>
             • Focado em garantir a qualidade dos projetos e entregas por meio de testes manuais.<br>
@@ -76,12 +93,28 @@
             • Active participation in Agile ceremonies such as Dailys, Refinements, Reviews, and Retrospectives.</p>
 
             <h3>QA Engineer - Iteris Consultoria e Software (Mar 2021 - Dec 2024)</h3>
-            <p><strong>Client: Fullsteam (Financial Sector)</strong><br>
+            <p><strong>Client: Fullsteam</strong><br>
             • Collaboration with American teams, testing a critical financial platform.<br>
             • Backend testing, data manipulation, and creating test cases and plans.<br>
             • Unit and Integration Testing, managing execution in Zephyr Scale.<br>
             • API testing with tools like Swagger and Postman.<br>
             • Daily log monitoring and active participation in Agile ceremonies.</p>
+
+            <h3>QA Engineer - Iteris Consultoria e Software (Mar 2021 - Dez 2024)</h3>
+            <p><strong>Client: Recovery Group</strong><br>
+            • API testing using Postman and Swagger, ensuring the integrity and reliability of client integrations.<br>
+            • Risk Matrix development, identifying impacts and defining effective testing strategies.<br>
+            • Integrated testing, validating system communication and ensuring solution integrity.<br>
+            • Test mapping in the SIR system, structuring scenarios and ensuring adequate coverage to validate functionalities.
+
+            <h3>QA Engineer - Iteris Consultoria e Software (Mar 2021 - Dez 2024)</h3>
+            <p><strong>Client: PagSeguro</strong><br>
+            • API testing using Swagger and Postman, ensuring efficient communication between services.<br>
+            • ChatBot testing, ensuring functionality and customer satisfaction while reducing company costs.<br>
+            • Test management in Jira, organizing and monitoring executions and results.<br>
+            • Integration testing, validating communication between different systems.<br>
+            • Impact analysis and management with other teams, ensuring delivery stability.<br>
+            • Test scenario creation with Gherkin, promoting greater clarity and standardization in testing.</p>
 
             <h3>Tester QA - i9XP Tecnologia (Feb 2020 - Feb 2021)</h3>
             <p><strong>Field: B2B E-commerce</strong><br>
@@ -113,5 +146,31 @@
             }
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function toggleLanguage(language) {
+        if (language === 'pt') {
+            document.getElementById('content-pt').classList.remove('hidden');
+            document.getElementById('content-en').classList.add('hidden');
+        } else if (language === 'en') {
+            document.getElementById('content-pt').classList.add('hidden');
+            document.getElementById('content-en').classList.remove('hidden');
+        }
+    }
+
+    function downloadPDF() {
+        const visibleContent = document.querySelector('.content:not(.hidden)'); // Seleciona o conteúdo visível
+        if (!visibleContent) return;
+        
+        html2pdf(visibleContent, {
+            margin: 10,
+            filename: 'Leonardo_Stefani_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        });
+    }
+</script>
+    
 </body>
 </html>
